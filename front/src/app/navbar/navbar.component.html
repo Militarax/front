@@ -1,0 +1,24 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <ul class="nav navbar-nav" routerLinkActive="active" >
+            <a class="navbar-brand" routerLink="/">seekIT</a>
+            <li class="nav-item"><a class="nav-link" routerLink="profiles" style="color: white">
+                <i class="fa fa-users" aria-hidden="true"></i> Profiles</a></li>
+        </ul>
+        <ul class="nav navbar-nav" routerLinkActive="active">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false" style="color: white">
+                    <i class="fa fa-user fa-fw"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+                    <a class="dropdown-item" routerLink="searchform"><i class="fa fa-filter" aria-hidden="true"></i>Search filters</a>
+                    <div class="divider dropdown-divider"></div>
+                    <a class="dropdown-item" routerLink="user"><i class="fa fa-cog"></i> Profile Settings</a>
+                    <a class="dropdown-item" (click)="Logout()" ><i class="fa fa-lock"></i> Log Out</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>

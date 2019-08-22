@@ -1,0 +1,76 @@
+<!--
+<div class="row">
+  <div class="col-sm-7 offset-sm-1">
+    <div class="container">
+      <form #SearchForm="ngForm">
+        <div class="form-group">
+          <label for="location">Choose users location</label>
+          <input type="text" class="form-control" id="location" name="location" [(ngModel)]="prof.location" required>
+        </div>
+        <label for="language">Choose programming language</label>
+        <select class="form-control" id="language" name="language" [(ngModel)]="prof.language" required>
+          <option *ngFor="let leng of lengs" [value]="leng"> {{ leng }} </option>
+        </select>
+        <br>
+        <button class="btn btn-dark"(click)="OnSubmit()">Search</button>
+      </form>
+    </div><br>
+      <button class="btn btn-dark">Add search form</button>
+  </div>
+</div>
+-->
+<h2 align="center">Search</h2>
+<div class="container">
+    <div class="col-sm-7 offset-sm-1">
+        <form [formGroup]="searchFilters">
+            <div formArrayName="filters">
+                <div *ngFor="let item of searchfils.controls; let pointIndex = index" [formGroupName]="pointIndex">
+                    <div class="border rounded-1 p-3 mb-3 d-done d-md-block">
+                        <label for="location">Type the country</label>
+                            <input type="text" class="form-control" id="location" formControlName="location">
+                        <mat-label for="language">Choose programming language</mat-label>
+                            <mat-select class="form-control" id="language" formControlName="language" multiple>
+                                <mat-option *ngFor="let leng of lengs" [value]="leng"> {{ leng }}</mat-option>
+                            </mat-select>
+                        <a (click)="deleteSearchFilters(pointIndex)" style="cursor: default" class="btn btn-dark" mat-button>
+                            <i class="fa fa-minus" aria-hidden="true"></i> Delete search form</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="margin-20">
+            <div align="right">
+                <a (click)="addSearchFilters()" style="cursor: default"  class="btn btn-dark" mat-button >
+                    <i class="fa fa-plus" aria-hidden="true"></i> Add search form</a></div>
+            <button class="btn btn-dark" (click)="OnSubmit()">Submit</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

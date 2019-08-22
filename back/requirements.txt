@@ -1,0 +1,9 @@
+scrapy
+celery
+djangorestframework
+django
+celery
+redis
+scrapyd
+scrapyd-client
+psycopg2

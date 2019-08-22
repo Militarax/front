@@ -1,0 +1,54 @@
+<h3 align="center">Your Profile</h3><br>
+<div class="container-lg px-md-2 mt-lg-4 clearfix">
+  <div class="col-12 col-md-3 float-left px-md-2">
+    <button (click)="ifEditUsername()" class="btn btn-dark"><i class="fa fa-user-circle" aria-hidden="true"></i> Edit username
+    </button><br><br>
+    <button (click)="ifEditPass()" class="btn btn-dark"><i class="fa fa-key" aria-hidden="true"></i> Edit password</button>&nbsp;<br><br>
+    <button type="button" (click)="ifClicked()" class="btn btn-dark"><i class="fa fa-user-times" aria-hidden="true"></i> Delete Account</button><br><br>
+  </div>
+  <div class="col-12 col-md-9 float-left px-2 pt-3 pt-md-0">
+    <div class="container">
+      <ul>
+          <li style="list-style-type: none" *ngIf="if_edit_username">
+            <inline-editor placeholder="Username" type="text" (click)="ifClickedLogin()"
+                       [(ngModel)]="user.username" (onSave)="saveEditable($event)" (onError)="Error()" min="6" name="Username"></inline-editor>
+          </li>
+          <li style="list-style-type: none" *ngIf="if_edit_password">
+            <inline-editor  placeholder="Password" (click)="ifClickedPass()" name="Password"type="password" min="6"
+                        [(ngModel)]="user.password" (onError)="Error()" (onSave)="saveEditable($event)"></inline-editor>
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!--
+<div align="center">
+  <h4 align="center">Your Profile</h4><br>
+  <ul>
+    <li style="list-style-type: none" *ngIf="!if_edit_username">Your username: {{ user.username }}
+    </li>
+      <li style="list-style-type: none" *ngIf="if_edit_username">
+        <inline-editor placeholder="Username" type="text" (click)="ifClickedLogin()" [(ngModel)]="user.username" (onSave)="saveEditable($event)" name="Username" >lol</inline-editor>
+      </li>
+    <li style="list-style-type: none" *ngIf="if_edit_password">
+      Change your password
+      <inline-editor  placeholder="Password" (click)="ifClickedPass()" name="Password"type="password" min="6" [(ngModel)]="user.password" (onError)="Error()" (onSave)="saveEditable($event)"></inline-editor>
+    </li>
+  </ul>
+  <br>
+  <div>
+   <button (click)="ifEditUsername()" class="btn btn-dark">Edit username</button>&nbsp;
+    <button (click)="ifEditPass()" class="btn btn-dark">Edit password</button>&nbsp;
+    <button type="button"(click)="ifClicked()" class="btn btn-dark">Delete Account</button>
+  </div>
+  <br>
+  <div>
+    <p *ngIf="if_edit_username">click on the username to change it</p>
+  </div>
+  <div>
+    <p *ngIf="if_edit_password">click on the password to change it</p>
+  </div>
+</div>
+-->
+
